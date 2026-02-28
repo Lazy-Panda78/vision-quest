@@ -1,0 +1,5 @@
+{
+  "name": "VisionQuest YOLO Classifier",
+  "description": "A high-performance image classification and object detection web app powered by YOLO. Upload JPG or PNG images to detect objects using a custom model and store results securely.",
+  "requestFramePermissions": []
+}
