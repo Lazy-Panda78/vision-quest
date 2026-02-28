@@ -1,20 +1,30 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 🛰️ VisionQuest — Military Object Detection (YOLOv8s)
 
-# Run and deploy your AI Studio app
+**Live Demo:** https://vision-quest-jet.vercel.app/#analysis-tool
 
-This contains everything you need to run your app locally.
+This project uses **YOLOv8s** to detect military objects in images:
+- Soldiers
+- Aircraft
+- Warships
+- Vehicles
 
-View your app in AI Studio: https://ai.studio/apps/c1eb7ff1-2896-44e7-81a1-42f96b9fd8b7
+## 🚀 Model Summary
 
-## Run Locally
+- **Architecture:** YOLOv8s  
+- **Epochs:** 50  
+- **Image Size:** 640×640  
+- **Optimizer:** AdamW  
+- **Final mAP@50:** **0.478**  
+- **Model Size:** ~22MB  
+- **CPU Inference:** ~25–35ms/img  
+- **GPU Inference:** ~7–10ms/img
 
-**Prerequisites:**  Node.js
+---
 
+## 🛠️ Training
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```python
+from ultralytics import YOLO
+
+model = YOLO("yolov8s.pt")
+model.train(data="military_dataset.yaml", epochs=50, imgsz=640)
